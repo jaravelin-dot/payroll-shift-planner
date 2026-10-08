@@ -1,0 +1,1 @@
+ALTER TABLE `zamestnanec` ADD `poradi_podkladu` integer;

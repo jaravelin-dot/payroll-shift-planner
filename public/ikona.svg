@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Mzdy</title>
+  <!-- Docházková karta: inkoustový zaoblený čtverec, mřížka 3×2 políček papírové barvy, jedno razítkově modré. -->
+  <rect width="512" height="512" rx="112" fill="#16202B"/>
+  <g fill="#F3F5F7">
+    <rect x="76" y="128" width="104" height="116" rx="22"/>
+    <rect x="204" y="128" width="104" height="116" rx="22"/>
+    <rect x="332" y="128" width="104" height="116" rx="22"/>
+    <rect x="76" y="268" width="104" height="116" rx="22"/>
+    <rect x="332" y="268" width="104" height="116" rx="22"/>
+  </g>
+  <rect x="204" y="268" width="104" height="116" rx="22" fill="#2B3FBF"/>
+</svg>

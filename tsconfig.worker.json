@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "lib": ["ES2023"], "module": "ESNext", "moduleResolution": "bundler",
+    "strict": true, "noEmit": true, "skipLibCheck": true, "isolatedModules": true,
+    "noUnusedLocals": true, "types": []
+  },
+  "include": ["worker", "rozpis", "src/core", "src/shared", "worker-configuration.d.ts"],
+  "exclude": ["worker/**/*.test.ts", "rozpis/**/*.test.ts", "worker/test", "src/**/*.test.ts", "src/core/test-utils.ts"]
+}

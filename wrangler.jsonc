@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mzdy",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "not_found_handling": "single-page-application", "run_worker_first": ["/api/*"] },
+  "d1_databases": [
+    // Před nasazením nahraď vlastním ID z `wrangler d1 create mzdy`. Lokální vývoj a testy ID nepotřebují.
+    { "binding": "DB", "database_name": "mzdy", "database_id": "local-placeholder-d1-id", "migrations_dir": "migrations" }
+  ],
+  // Čárkou oddělené e-maily, které Cloudflare Access pustí do appky (ukázkové hodnoty).
+  "vars": { "ALLOWED_EMAILS": "majitel@example.cz" },
+  "observability": { "enabled": true }
+}

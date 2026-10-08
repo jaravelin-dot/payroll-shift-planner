@@ -1,0 +1,1 @@
+ALTER TABLE `zamestnanec` ADD `v_podkladu` integer DEFAULT true NOT NULL;

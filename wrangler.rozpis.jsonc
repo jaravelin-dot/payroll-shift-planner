@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rozpis",
+  "main": "rozpis/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "rozpis/public" },
+  "d1_databases": [
+    // Stejná databáze jako hlavní appka (wrangler.jsonc); před nasazením nahraď vlastním ID.
+    { "binding": "DB", "database_name": "mzdy", "database_id": "local-placeholder-d1-id", "migrations_dir": "migrations" }
+  ],
+  "observability": { "enabled": true }
+}

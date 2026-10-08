@@ -1,0 +1,848 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "084547a6-b6df-4713-b1b4-15f4d2992f52",
+  "prevId": "d1383456-e38d-4b9e-8712-4991067a63b0",
+  "tables": {
+    "den": {
+      "name": "den",
+      "columns": {
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "datum": {
+          "name": "datum",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "typ": {
+          "name": "typ",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "minuty": {
+          "name": "minuty",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "kasa": {
+          "name": "kasa",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "poznamka": {
+          "name": "poznamka",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "den_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "den_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "den",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "den_zamestnanec_id_datum_pk": {
+          "columns": [
+            "zamestnanec_id",
+            "datum"
+          ],
+          "name": "den_zamestnanec_id_datum_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "dovolena_zustatek": {
+      "name": "dovolena_zustatek",
+      "columns": {
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "rok": {
+          "name": "rok",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prevod_min": {
+          "name": "prevod_min",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "narok_navic_min": {
+          "name": "narok_navic_min",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "dovolena_zustatek_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "dovolena_zustatek_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "dovolena_zustatek",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "dovolena_zustatek_zamestnanec_id_rok_pk": {
+          "columns": [
+            "zamestnanec_id",
+            "rok"
+          ],
+          "name": "dovolena_zustatek_zamestnanec_id_rok_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "firma": {
+      "name": "firma",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nazev": {
+          "name": "nazev",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ico": {
+          "name": "ico",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "adresa": {
+          "name": "adresa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ucet": {
+          "name": "ucet",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nastaveni": {
+          "name": "nastaveni",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "vytvoreno": {
+          "name": "vytvoreno",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "mesicni_vstup": {
+      "name": "mesicni_vstup",
+      "columns": {
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "rok": {
+          "name": "rok",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "mesic": {
+          "name": "mesic",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "odmena_za_den_hal": {
+          "name": "odmena_za_den_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "aktivita_hal": {
+          "name": "aktivita_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "jine_odmeny_hal": {
+          "name": "jine_odmeny_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "srazky_hal": {
+          "name": "srazky_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prumerny_vydelek_hal": {
+          "name": "prumerny_vydelek_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "poznamka": {
+          "name": "poznamka",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "mesicni_vstup_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "mesicni_vstup_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "mesicni_vstup",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "mesicni_vstup_zamestnanec_id_rok_mesic_pk": {
+          "columns": [
+            "zamestnanec_id",
+            "rok",
+            "mesic"
+          ],
+          "name": "mesicni_vstup_zamestnanec_id_rok_mesic_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "odkaz_rozpisu": {
+      "name": "odkaz_rozpisu",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "firma_id": {
+          "name": "firma_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "token": {
+          "name": "token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nazev": {
+          "name": "nazev",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "vytvoreno": {
+          "name": "vytvoreno",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "zruseno": {
+          "name": "zruseno",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "odkaz_rozpisu_token_unique": {
+          "name": "odkaz_rozpisu_token_unique",
+          "columns": [
+            "token"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {
+        "odkaz_rozpisu_firma_id_firma_id_fk": {
+          "name": "odkaz_rozpisu_firma_id_firma_id_fk",
+          "tableFrom": "odkaz_rozpisu",
+          "tableTo": "firma",
+          "columnsFrom": [
+            "firma_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "odkaz_rozpisu_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "odkaz_rozpisu_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "odkaz_rozpisu",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "plan_smeny": {
+      "name": "plan_smeny",
+      "columns": {
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "datum": {
+          "name": "datum",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "typ": {
+          "name": "typ",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "sablona_id": {
+          "name": "sablona_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "minuty": {
+          "name": "minuty",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "plan_smeny_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "plan_smeny_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "plan_smeny",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "plan_smeny_sablona_id_sablona_smeny_id_fk": {
+          "name": "plan_smeny_sablona_id_sablona_smeny_id_fk",
+          "tableFrom": "plan_smeny",
+          "tableTo": "sablona_smeny",
+          "columnsFrom": [
+            "sablona_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "plan_smeny_zamestnanec_id_datum_pk": {
+          "columns": [
+            "zamestnanec_id",
+            "datum"
+          ],
+          "name": "plan_smeny_zamestnanec_id_datum_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "sablona_smeny": {
+      "name": "sablona_smeny",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "firma_id": {
+          "name": "firma_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nazev": {
+          "name": "nazev",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "zacatek": {
+          "name": "zacatek",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "konec": {
+          "name": "konec",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prestavka_min": {
+          "name": "prestavka_min",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "barva": {
+          "name": "barva",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sablona_smeny_firma_id_firma_id_fk": {
+          "name": "sablona_smeny_firma_id_firma_id_fk",
+          "tableFrom": "sablona_smeny",
+          "tableTo": "firma",
+          "columnsFrom": [
+            "firma_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "sazba": {
+      "name": "sazba",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "zamestnanec_id": {
+          "name": "zamestnanec_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "plati_od": {
+          "name": "plati_od",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "hodinova_hal": {
+          "name": "hodinova_hal",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sazba_zamestnanec_id_zamestnanec_id_fk": {
+          "name": "sazba_zamestnanec_id_zamestnanec_id_fk",
+          "tableFrom": "sazba",
+          "tableTo": "zamestnanec",
+          "columnsFrom": [
+            "zamestnanec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "uzaverka": {
+      "name": "uzaverka",
+      "columns": {
+        "firma_id": {
+          "name": "firma_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "rok": {
+          "name": "rok",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "mesic": {
+          "name": "mesic",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "uzavreno": {
+          "name": "uzavreno",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "vysledky": {
+          "name": "vysledky",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "uzaverka_firma_id_firma_id_fk": {
+          "name": "uzaverka_firma_id_firma_id_fk",
+          "tableFrom": "uzaverka",
+          "tableTo": "firma",
+          "columnsFrom": [
+            "firma_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "uzaverka_firma_id_rok_mesic_pk": {
+          "columns": [
+            "firma_id",
+            "rok",
+            "mesic"
+          ],
+          "name": "uzaverka_firma_id_rok_mesic_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "zamestnanec": {
+      "name": "zamestnanec",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "firma_id": {
+          "name": "firma_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "jmeno": {
+          "name": "jmeno",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prijmeni": {
+          "name": "prijmeni",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "smlouva": {
+          "name": "smlouva",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "uvazek_min_tydne": {
+          "name": "uvazek_min_tydne",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nastup": {
+          "name": "nastup",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ukonceni": {
+          "name": "ukonceni",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "prohlaseni": {
+          "name": "prohlaseni",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "invalidita": {
+          "name": "invalidita",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ztpp": {
+          "name": "ztpp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "deti": {
+          "name": "deti",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "statni_pojistenec": {
+          "name": "statni_pojistenec",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "sleva_na_pojistnem": {
+          "name": "sleva_na_pojistnem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ucet": {
+          "name": "ucet",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "poznamka": {
+          "name": "poznamka",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "aktivni": {
+          "name": "aktivni",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "role_planu": {
+          "name": "role_planu",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'MIMO_PLAN'"
+        },
+        "stridani_smen": {
+          "name": "stridani_smen",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
+        },
+        "poradi_podkladu": {
+          "name": "poradi_podkladu",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "v_podkladu": {
+          "name": "v_podkladu",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "zamestnanec_firma_id_firma_id_fk": {
+          "name": "zamestnanec_firma_id_firma_id_fk",
+          "tableFrom": "zamestnanec",
+          "tableTo": "firma",
+          "columnsFrom": [
+            "firma_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}
